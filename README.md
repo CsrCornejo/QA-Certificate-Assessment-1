@@ -2,6 +2,8 @@
 
 _Session 1 assessment: Challenge Exercises (TestCafe)_
 
+This repository is an example and practice of the use of TestCafe in order to create e2e testing of a simple web page.
+
 
 ### Installation 🔧
 
@@ -17,19 +19,20 @@ Once installed, we can use the following custom command to execute Test Cafe usi
 ```
 npm run test-chrome
 ```
-## About .env ⚙️
+### About .env ⚙️
 
 Due to the VALIDUSER and PASSWORD being public, the .env is not ignored by github thus making it easier to test.
 You can change the user at the .env file to test for different ones.
 
 :warning: Make sure any change to this file is not pushed to the remote.
+
 :warning: Due to windows usually using process.env.USERNAME as the system user variable (Linux uses USER) the name was changed to VALIDUSER.
 
-### Asessment Points 🔩
+## Asessment Points 🔩
 
 - [x] _*TODO*_
 
-### Features 🔩
+## Features 💡
 
 The following TestCafe features and / or  best practices have been used in this repository as learning material:
 
