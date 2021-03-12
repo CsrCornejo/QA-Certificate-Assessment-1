@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test-chrome": "testcafe chrome ./page_model/tests"
+  },
   "author": "Cesar Cornejo",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "testcafe": "^1.12.0"
   }
 }
