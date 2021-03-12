@@ -28,9 +28,12 @@ You can change the user at the .env file to test for different ones.
 
 :warning: Due to windows usually using process.env.USERNAME as the system user variable (Linux uses USER) the name was changed to VALIDUSER.
 
-## Asessment Points 🔩
+## Asessment Points / Tests 🔩
 
-- [x] _*TODO*_
+- [x] Login valid user [here](page_model/tests/Login.test.js)
+- [x] Login invalid user [here](page_model/tests/Login.test.js)
+- [x] Logout [here](page_model/tests/Logout.test.js)
+- [x] Navigate to shopping cart [here](page_model/tests/Shopping.test.js)
 
 ## Features 💡
 
