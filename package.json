@@ -1,0 +1,12 @@
+{
+  "name": "qa-assessment-session-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Cesar Cornejo",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^1.12.0"
+  }
+}
