@@ -1,28 +1,13 @@
 import { Selector } from 'testcafe';
-import MainLayout from '../layouts/MainLayout'
+import CartList from '../layouts/CartList'
 
-const cart = Selector('#cart_contents_container')
-const cartItems = cart.find('.cart_item')
+const cartContainer = Selector('#cart_contents_container')
 
-class Item {
-    constructor(nth) {
-        this.cartItem = cartItems.nth(nth)
-        this.name = this.cartItem.find('.inventory_item_name');
-    }
-}
-
-class ShoppingCartPage extends MainLayout {
+class ShoppingCartPage extends CartList {
     constructor(){
         super()
         this.pageTitle = Selector('.subheader').withExactText('Your Cart')
-        this.cartItems = cartItems
-        this.checkoutBtn = cart.find('.checkout_button')
-
-        this.itemList = [
-            new Item(0),
-            new Item(1),
-            new Item(2),
-        ]
+        this.checkoutBtn = cartContainer.find('.checkout_button')
     }
 }
 

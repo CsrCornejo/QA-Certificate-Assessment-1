@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
-import MainLayout from '../layouts/MainLayout'
+import CartList from '../layouts/CartList'
 
-class OverviewPage extends MainLayout {
+class OverviewPage extends CartList {
     constructor(){
         super()
         this.pageTitle = Selector('.subheader').withExactText('Checkout: Overview')
