@@ -28,6 +28,12 @@ You can change the user at the .env file to test for different ones.
 
 :warning: Due to windows usually using process.env.USERNAME as the system user variable (Linux uses USER) the name was changed to VALIDUSER.
 
+### About layouts 🔔
+
+In order to reduce repeated code on several pages like the header selectors or the cart list selectors, there exists two super classes that centralize this code.
+
+:warning: Due to extends restriction to 1 class, [CartList](page_model/layouts/CartList.js) extends from MainLayout.
+
 ## Asessment Points / Tests 🔩
 
 - [x] Login valid user [here](page_model/tests/Login.test.js)
@@ -38,6 +44,7 @@ You can change the user at the .env file to test for different ones.
 - [x] Add multiple items to shopping cart [here](page_model/tests/Shopping.test.js)
 - [x] Checkout shopping cart with missing information [here](page_model/tests/Shopping.test.js)
 - [x] Fill checkout information with data [here](page_model/tests/Shopping.test.js)
+- [x] Checkout overview items are correct [here](page_model/tests/Shopping.test.js)
 
 ## Features 💡
 
