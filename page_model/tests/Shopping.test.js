@@ -3,28 +3,28 @@ import ShoppingCartPage from '../pages/ShoppingCartPage'
 import { standardUser } from '../roles/Roles'
 
 fixture('Shopping cart feature testing')
+    .beforeEach(async t => {
+        await t
+            .useRole(standardUser)
+    })
 
 test('Users can navigate to shopping cart page', async t => {
     await t
-        .useRole(standardUser)
         .click(ProductsPage.header.shoppingCart.container)
         .expect(ShoppingCartPage.pageTitle.exists).ok()
 })
 
-test('Users can add 1 item to shopping cart', async t => {
+test.only('Users can add 1 item to shopping cart', async t => {
     // Destructuring assignment, it can be merged with smart assertion
-    const [{ name: productName, addToCartBtn }] = ProductsPage.productList;
-    const [{ name: cartItemName }] = ShoppingCartPage.itemList;
+    const [{ name: productName, addToCartBtn }] = ProductsPage.productList
+    const [{ name: cartItemName }] = ShoppingCartPage.itemList
 
     // Smart Assertions to be calculated later
-    const productNameAssertion = productName.innerText;
-    const cartItemNameAssertion = cartItemName.innerText;
+    const productNameAssertion = productName.innerText
+    const cartItemNameAssertion = cartItemName.innerText
 
-    // Test steps
-    await t
-        .useRole(standardUser)
-
-    const productNameText = await productNameAssertion;
+    // Test steps after useRole
+    const productNameText = await productNameAssertion
 
     await t
         .click(addToCartBtn)
