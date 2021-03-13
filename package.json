@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-chrome": "testcafe chrome ./page_model/tests"
+    "test-chrome": "testcafe chrome ./page_model/tests",
+    "test-chrome-debug": "testcafe chrome ./page_model/tests -d"
   },
   "author": "Cesar Cornejo",
   "license": "ISC",
