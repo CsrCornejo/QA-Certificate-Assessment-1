@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector, t } from 'testcafe';
 import MainLayout from '../layouts/MainLayout'
 
 const inventory = Selector('#inventory_container')
@@ -15,12 +15,24 @@ class ProductsPage extends MainLayout {
     constructor(){
         super()
         this.pageTitle = Selector('.product_label')
+    }
 
-        this.productList = [
-            new Product(0),
-            new Product(1),
-            new Product(4),
-        ]
+    async addProducts(indexes) {
+        const productNames = []
+        // const allItems = await this.productList
+        for (const index of indexes) {
+            const product = new Product(index)
+            const productName = await product.name.innerText
+            productNames.push(productName)
+    
+            await t
+                .click(product.addToCartBtn)
+        }
+
+        await t
+            .expect(this.header.shoppingCart.badge.innerText).eql(productNames.length.toString())
+
+        return productNames
     }
 }
 
