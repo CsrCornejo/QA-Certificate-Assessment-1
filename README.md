@@ -36,6 +36,7 @@ You can change the user at the .env file to test for different ones.
 - [x] Navigate to shopping cart [here](page_model/tests/Shopping.test.js)
 - [x] Add 1 item to shopping cart [here](page_model/tests/Shopping.test.js)
 - [x] Add multiple items to shopping cart [here](page_model/tests/Shopping.test.js)
+- [x] Checkout shopping cart with missing information [here](page_model/tests/Shopping.test.js)
 
 ## Features 💡
 

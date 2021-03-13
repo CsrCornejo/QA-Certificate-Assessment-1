@@ -16,6 +16,7 @@ class ShoppingCartPage extends MainLayout {
         super()
         this.pageTitle = Selector('.subheader').withExactText('Your Cart')
         this.cartItems = cartItems
+        this.checkoutBtn = cart.find('.checkout_button')
 
         this.itemList = [
             new Item(0),

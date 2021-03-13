@@ -1,5 +1,6 @@
 import ProductsPage from '../pages/ProductsPage'
 import ShoppingCartPage from '../pages/ShoppingCartPage'
+import InformationPage from '../pages/InformationPage'
 import { standardUser } from '../roles/Roles'
 
 fixture('Shopping cart feature testing')
@@ -33,8 +34,7 @@ test('Users can add 1 item to shopping cart', async t => {
         .expect(cartItemNameAssertion).eql(productNameText)
 })
 
-test.only('Users can add multiple items to shopping cart', async t => {
-    // Destructuring assignment, it can be merged with smart assertion
+test('Users can add multiple items to shopping cart', async t => {
     const productNames = []
 
     for (const product of ProductsPage.productList) {
@@ -58,4 +58,13 @@ test.only('Users can add multiple items to shopping cart', async t => {
             .expect(productNames).contains(cartItemName)
     }
 
+})
+
+test.only('User checkout with missing information', async t => {
+    await t
+        .click(ProductsPage.header.shoppingCart.container)
+        .click(ShoppingCartPage.checkoutBtn)
+        .expect(InformationPage.pageTitle.exists).ok()
+        .click(InformationPage.continueBtn)
+        .expect(InformationPage.errorMessage.exists).ok()
 })
