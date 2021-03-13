@@ -38,29 +38,12 @@ test('Users can add 1 item to shopping cart', async t => {
 })
 
 test('Users can add multiple items to shopping cart', async t => {
-    const productNames = []
-
-    for (const product of ProductsPage.productList) {
-        const productName = await product.name.innerText
-        productNames.push(productName)
-
-        await t
-            .click(product.addToCartBtn)
-    }
+    const productNames = await ProductsPage.addProducts([1, 4])
 
     await t
-        .expect(ProductsPage.header.shoppingCart.badge.innerText).eql(ProductsPage.productList.length.toString())
-        .click(ProductsPage.header.shoppingCart.container)
-        .expect(ShoppingCartPage.cartItems.count).eql(ProductsPage.productList.length)
+        .click(ProductsPage.header.shoppingCart.container)    
     
-
-    for (const cartItem of ShoppingCartPage.itemList) {
-        const cartItemName = await cartItem.name.innerText
-
-        await t
-            .expect(productNames).contains(cartItemName)
-    }
-
+    await ShoppingCartPage.checkCartItems(productNames)
 })
 
 test('User checkout with missing information', async t => {
