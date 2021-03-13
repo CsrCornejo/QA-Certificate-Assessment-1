@@ -3,6 +3,8 @@ import ShoppingCartPage from '../pages/ShoppingCartPage'
 import InformationPage from '../pages/InformationPage'
 import { standardUser } from '../roles/Roles'
 
+const dataSet = require('../data/contacts.json');
+
 fixture('Shopping cart feature testing')
     .beforeEach(async t => {
         await t
@@ -60,11 +62,21 @@ test('Users can add multiple items to shopping cart', async t => {
 
 })
 
-test.only('User checkout with missing information', async t => {
+test('User checkout with missing information', async t => {
     await t
         .click(ProductsPage.header.shoppingCart.container)
         .click(ShoppingCartPage.checkoutBtn)
         .expect(InformationPage.pageTitle.exists).ok()
         .click(InformationPage.continueBtn)
         .expect(InformationPage.errorMessage.exists).ok()
+})
+
+dataSet.forEach(contact => {
+    test(`Fill ${contact.name} checkout information`, async t => {
+        await t
+            .click(ProductsPage.header.shoppingCart.container)
+            .click(ShoppingCartPage.checkoutBtn)
+        
+        await InformationPage.submitInformationForm(contact)
+    })
 })

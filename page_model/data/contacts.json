@@ -1,0 +1,12 @@
+[
+    {
+        "name": "John",
+        "lastname": "Hearth",
+        "zipcode": "12345"
+    },
+    {
+        "name": "Olivia",
+        "lastname": "Peyton",
+        "zipcode": "78944"
+    }
+]
