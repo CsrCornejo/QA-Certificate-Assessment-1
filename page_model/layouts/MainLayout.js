@@ -1,11 +1,16 @@
 import { Selector } from 'testcafe';
 
+const shoppingCart = Selector('#shopping_cart_container')
+
 class MainLayout {
     constructor(){
         this.header = {
             appLogo: Selector('.app_logo'),
             burgerMenu: Selector('#react-burger-menu-btn'),
-            shoppingCart: Selector('#shopping_cart_container')
+            shoppingCart: {
+                container: shoppingCart,
+                badge: shoppingCart.find('.shopping_cart_badge')
+            }
         }
 
         this.sidebar = {

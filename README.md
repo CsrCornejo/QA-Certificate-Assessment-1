@@ -34,6 +34,7 @@ You can change the user at the .env file to test for different ones.
 - [x] Login invalid user [here](page_model/tests/Login.test.js)
 - [x] Logout [here](page_model/tests/Logout.test.js)
 - [x] Navigate to shopping cart [here](page_model/tests/Shopping.test.js)
+- [x] Add 1 item to shopping cart [here](page_model/tests/Shopping.test.js)
 
 ## Features 💡
 
@@ -43,6 +44,8 @@ The following TestCafe features and / or  best practices have been used in this 
 - [x] [Page Model Pattern](https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/authentication.html#user-roles) implemented [here](page_model/pages/LoginPage.js) used [here](page_model/tests/Login.test.js)
 - [x] [Class Page Extends](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes/extends) implemented [here](page_model/layouts/MainLayout.js) used [here](page_model/pages/ProductsPage.js) in action [here](page_model/tests/Logout.test.js)
 - [x] [Environment Variables](https://devexpress.github.io/testcafe/documentation/recipes/configuration/access-environment-variables-in-tests.html) _Using DotEnv module for easy creation_
+- [x] [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) used [here](page_model/tests/Shopping.test.js)
+- [x] [Smart Assertions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/best-practices.html#smart-assertions) used [here](page_model/tests/Shopping.test.js)
 
 
 ## Tools 🛠️
