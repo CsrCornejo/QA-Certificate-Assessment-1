@@ -67,3 +67,20 @@ dataSet.forEach(contact => {
             .expect(OverviewPage.pageTitle.exists).ok()
     })
 })
+
+
+test('User can see correct items at checkout overview', async t => {
+    const productNames = await ProductsPage.addProducts([1, 4])
+    const [contact] = dataSet
+
+    await t
+        .click(ProductsPage.header.shoppingCart.container)
+        .click(ShoppingCartPage.checkoutBtn)
+    
+    await InformationPage.submitInformationForm(contact)
+
+    await t
+        .expect(OverviewPage.pageTitle.exists).ok()
+    
+    await OverviewPage.checkCartItems(productNames)
+})
