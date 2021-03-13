@@ -35,6 +35,7 @@ You can change the user at the .env file to test for different ones.
 - [x] Logout [here](page_model/tests/Logout.test.js)
 - [x] Navigate to shopping cart [here](page_model/tests/Shopping.test.js)
 - [x] Add 1 item to shopping cart [here](page_model/tests/Shopping.test.js)
+- [x] Add multiple items to shopping cart [here](page_model/tests/Shopping.test.js)
 
 ## Features 💡
 
@@ -46,7 +47,7 @@ The following TestCafe features and / or  best practices have been used in this 
 - [x] [Environment Variables](https://devexpress.github.io/testcafe/documentation/recipes/configuration/access-environment-variables-in-tests.html) _Using DotEnv module for easy creation_
 - [x] [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) used [here](page_model/tests/Shopping.test.js)
 - [x] [Smart Assertions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/best-practices.html#smart-assertions) used [here](page_model/tests/Shopping.test.js)
-
+- [x] [Setup and Teardown](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/best-practices.html#setup-and-teardown) used [here](page_model/tests/Shopping.test.js)
 
 ## Tools 🛠️
 

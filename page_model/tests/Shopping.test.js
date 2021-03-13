@@ -14,7 +14,7 @@ test('Users can navigate to shopping cart page', async t => {
         .expect(ShoppingCartPage.pageTitle.exists).ok()
 })
 
-test.only('Users can add 1 item to shopping cart', async t => {
+test('Users can add 1 item to shopping cart', async t => {
     // Destructuring assignment, it can be merged with smart assertion
     const [{ name: productName, addToCartBtn }] = ProductsPage.productList
     const [{ name: cartItemName }] = ShoppingCartPage.itemList
@@ -31,4 +31,31 @@ test.only('Users can add 1 item to shopping cart', async t => {
         .expect(ProductsPage.header.shoppingCart.badge.innerText).eql('1')
         .click(ProductsPage.header.shoppingCart.container)
         .expect(cartItemNameAssertion).eql(productNameText)
+})
+
+test.only('Users can add multiple items to shopping cart', async t => {
+    // Destructuring assignment, it can be merged with smart assertion
+    const productNames = []
+
+    for (const product of ProductsPage.productList) {
+        const productName = await product.name.innerText
+        productNames.push(productName)
+
+        await t
+            .click(product.addToCartBtn)
+    }
+
+    await t
+        .expect(ProductsPage.header.shoppingCart.badge.innerText).eql(ProductsPage.productList.length.toString())
+        .click(ProductsPage.header.shoppingCart.container)
+        .expect(ShoppingCartPage.cartItems.count).eql(ProductsPage.productList.length)
+    
+
+    for (const cartItem of ShoppingCartPage.itemList) {
+        const cartItemName = await cartItem.name.innerText
+
+        await t
+            .expect(productNames).contains(cartItemName)
+    }
+
 })

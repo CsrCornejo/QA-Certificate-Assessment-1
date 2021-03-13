@@ -17,7 +17,9 @@ class ProductsPage extends MainLayout {
         this.pageTitle = Selector('.product_label')
 
         this.productList = [
-            new Product(0)
+            new Product(0),
+            new Product(1),
+            new Product(4),
         ]
     }
 }
