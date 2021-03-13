@@ -1,6 +1,7 @@
 import ProductsPage from '../pages/ProductsPage'
 import ShoppingCartPage from '../pages/ShoppingCartPage'
 import InformationPage from '../pages/InformationPage'
+import OverviewPage from '../pages/OverviewPage'
 import { standardUser } from '../roles/Roles'
 
 const dataSet = require('../data/contacts.json');
@@ -78,5 +79,8 @@ dataSet.forEach(contact => {
             .click(ShoppingCartPage.checkoutBtn)
         
         await InformationPage.submitInformationForm(contact)
+
+        await t
+            .expect(OverviewPage.pageTitle.exists).ok()
     })
 })
