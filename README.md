@@ -19,6 +19,9 @@ Once installed, we can use the following custom command to execute Test Cafe usi
 ```
 npm run test-chrome
 ```
+
+There exists several other custom commands to execute the test with other browsers and options. You can check the package.json to see the different options (firefox, headless, etc...).
+
 ### About .env ⚙️
 
 Due to the VALIDUSER and PASSWORD being public, the .env is not ignored by github thus making it easier to test.
