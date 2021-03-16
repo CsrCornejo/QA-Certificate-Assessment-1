@@ -2,6 +2,7 @@ import ProductsPage from '../pages/ProductsPage'
 import ShoppingCartPage from '../pages/ShoppingCartPage'
 import InformationPage from '../pages/InformationPage'
 import OverviewPage from '../pages/OverviewPage'
+import ConfirmationPage from '../pages/ConfirmationPage'
 import { standardUser } from '../roles/Roles'
 
 const dataSet = require('../data/contacts.json');
@@ -73,4 +74,20 @@ test('User can see correct items at checkout overview', async t => {
         .expect(OverviewPage.pageTitle.exists).ok()
 
     await OverviewPage.checkCartItems(productNames)
+})
+
+test('User can complete a purchase', async t => {
+    const productNames = await ProductsPage.addProducts([1])
+    const [contact] = dataSet
+
+    await t
+        .click(ProductsPage.header.shoppingCart.container)
+        .click(ShoppingCartPage.checkoutBtn)
+
+    await InformationPage.submitInformationForm(contact)      
+
+    await t
+        .expect(OverviewPage.pageTitle.exists).ok()
+        .click(OverviewPage.finishBtn)
+        .expect(ConfirmationPage.pageTitle.exists).ok()
 })

@@ -45,6 +45,7 @@ In order to reduce repeated code on several pages like the header selectors or t
 - [x] Checkout shopping cart with missing information [here](page_model/tests/Shopping.test.js)
 - [x] Fill checkout information with data [here](page_model/tests/Shopping.test.js)
 - [x] Checkout overview items are correct [here](page_model/tests/Shopping.test.js)
+- [x] Complete a purchase [here](page_model/tests/Shopping.test.js)
 
 ## Features 💡
 
@@ -55,7 +56,6 @@ The following TestCafe features and / or  best practices have been used in this 
 - [x] [Class Page Extends](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes/extends) implemented [here](page_model/layouts/MainLayout.js) used [here](page_model/pages/ProductsPage.js) in action [here](page_model/tests/Logout.test.js)
 - [x] [Environment Variables](https://devexpress.github.io/testcafe/documentation/recipes/configuration/access-environment-variables-in-tests.html) _Using DotEnv module for easy creation_
 - [x] [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) used [here](page_model/tests/Shopping.test.js)
-- [x] [Smart Assertions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/best-practices.html#smart-assertions) used [here](page_model/tests/Shopping.test.js)
 - [x] [Setup and Teardown](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/best-practices.html#setup-and-teardown) used [here](page_model/tests/Shopping.test.js)
 - [x] [Data-Driven Tests](https://devexpress.github.io/testcafe/documentation/recipes/best-practices/create-data-driven-tests.html) used [here](page_model/tests/Shopping.test.js)
 
