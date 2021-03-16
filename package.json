@@ -8,6 +8,7 @@
     "test-firefox": "testcafe firefox ./page_model/tests",
     "test-chrome": "testcafe chrome ./page_model/tests",
     "test-chrome:headless": "testcafe chrome:headless ./page_model/tests",
+    "test-chrome:json": "testcafe chrome ./page_model/tests --reporter json",
     "test-chrome-debug": "testcafe chrome ./page_model/tests -d"
   },
   "author": "Cesar Cornejo",

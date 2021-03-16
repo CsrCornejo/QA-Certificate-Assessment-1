@@ -59,6 +59,7 @@ The following TestCafe features and / or  best practices have been used in this 
 - [x] [Setup and Teardown](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/best-practices.html#setup-and-teardown) used [here](page_model/tests/Shopping.test.js)
 - [x] [Data-Driven Tests](https://devexpress.github.io/testcafe/documentation/recipes/best-practices/create-data-driven-tests.html) used [here](page_model/tests/Shopping.test.js)
 - [x] [Multi-browser testing](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/run-tests.html) used [here](package.json)
+- [x] [Data Reporter](https://devexpress.github.io/testcafe/documentation/guides/concepts/reporters.html) used [here](package.json)
 
 ## Tools 🛠️
 
